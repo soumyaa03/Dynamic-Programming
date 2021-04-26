@@ -1,0 +1,29 @@
+class Solution   // kadane's algorithm
+{
+    public int maxSubArray(int[] nums)   //num:[-2,1] 
+    {
+        if( nums.length == 0 ){
+            return 0;
+        }
+        
+      int max_current=nums[0];
+        int max_end=nums[0];
+        int max_element=nums[0];
+        
+        for(int i=1;i<nums.length;i++)
+        {
+           if(max_end<0)
+           {
+               max_end=nums[i];
+           }
+            else
+            {
+                max_end+=nums[i];
+            }
+            if(max_end>max_current)
+                max_current=max_end;
+        
+    }
+        return max_current;
+}
+}
