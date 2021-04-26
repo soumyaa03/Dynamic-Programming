@@ -1,0 +1,17 @@
+class NumArray {
+    private int[] data;
+
+    public NumArray(int[] nums) {
+        data = nums;
+        
+    }
+    
+    public int sumRange(int left, int right) {
+        int sum = 0;
+    for (int k = left; k <= right; k++) {
+        sum += data[k];
+    }
+    return sum;
+        
+    }
+}
